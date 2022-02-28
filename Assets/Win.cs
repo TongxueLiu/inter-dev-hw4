@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
@@ -20,5 +21,7 @@ public class Win : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         titleText.text = "You Escaped!";
+
+        SceneManager.LoadScene("Menu");
     }
 }
