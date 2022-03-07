@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MaskOn : MonoBehaviour
 {
 
-    public SpriteRenderer sr;
+    public SpriteRenderer lightSr, noLightSr;
+    public SpriteRenderer flashlight;
+
+    public TMP_Text titleText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +25,14 @@ public class MaskOn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            sr.enabled = true;
+        if (flashlight.enabled)
+        {
+            lightSr.enabled = true;
+        } else
+        {
+            titleText.text = "Too Dark!";
+            noLightSr.enabled = true;
+        }
     }
 
 }
