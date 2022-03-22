@@ -23,8 +23,13 @@ public class Win : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        titleText.text = "You Escaped!";
+        StartCoroutine(LevelBeated());
+    }
 
+    IEnumerator LevelBeated()
+    {
+        titleText.text = "You Escaped!";
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Menu");
     }
 }

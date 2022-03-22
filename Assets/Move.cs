@@ -19,20 +19,20 @@ public class Move : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(Vector3.left * .01f, Space.World);
+            transform.Translate(Vector3.left * .015f, Space.World);
         }
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(Vector3.up * .01f, Space.World);
+            transform.Translate(Vector3.up * .015f, Space.World);
 
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(Vector3.right * .01f, Space.World);
+            transform.Translate(Vector3.right * .015f, Space.World);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(Vector3.down * .01f, Space.World);
+            transform.Translate(Vector3.down * .015f, Space.World);
 
         }
 

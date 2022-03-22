@@ -8,6 +8,8 @@ public class MenuButton : MonoBehaviour
     // Start is called before the first frame update
     public SpriteRenderer sr;
     public Sprite sp1, sp2;
+
+    public AudioSource ad;
     void Start()
     {
         
@@ -19,6 +21,10 @@ public class MenuButton : MonoBehaviour
         
     }
 
+    private void OnMouseEnter()
+    {
+        ad.Play(0);
+    }
     void OnMouseOver()
     {
         sr.sprite = sp2;

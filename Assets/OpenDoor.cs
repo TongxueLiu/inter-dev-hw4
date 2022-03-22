@@ -6,6 +6,8 @@ public class OpenDoor : MonoBehaviour
 {
     public SpriteRenderer key;
     public GameObject keyToDestroy;
+
+    public AudioSource ad;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,19 @@ public class OpenDoor : MonoBehaviour
     {
         if (key.enabled)
         {
-            Destroy(keyToDestroy);
-
-            key.enabled = false;
+            StartCoroutine(Open());
         }
+    }
+
+    IEnumerator Open()
+    {
+        yield return new WaitForSeconds(.4f);
+
+        ad.Play(0);
+
+        Destroy(keyToDestroy);
+
+        key.enabled = false;
+
     }
 }
